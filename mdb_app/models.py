@@ -12,9 +12,9 @@ class Gener(models.Model):
 class Movie(models.Model):
     name = models.CharField(max_length=140)
     gener = models.ManyToManyField(Gener)
-    imdb_score = models.IntegerField(default=1,
+    imdb_score = models.FloatField(default=1,
         validators=[
-            MaxValueValidator(10),
+            MaxValueValidator(10.0),
             MinValueValidator(1)
         ]
 
